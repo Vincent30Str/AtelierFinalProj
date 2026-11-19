@@ -1,0 +1,214 @@
+/* External CSS Method - Primary Styles */
+/* Google Font CDN Link */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', serif;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #0A0908; /* Rich black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EAE0D5; /* Warm off-white for text */
+}
+
+/* ===== UNIFIED TABLE STYLING ===== */
+table{
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 130%;
+  transform: translate(-50%,-50%);
+  width: 60%; 
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 6px; /* Matching container radius */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(234, 224, 213, 0.05); /* Same as container */
+  background: #121212; /* Same as container background */
+ }
+ td , th{
+  padding: 15px 20px;
+  text-align: center;
+ }
+ th{
+  background-color: #daa520; /* Golden accent - matches icons and buttons */
+  color: #0A0908; /* Black text - matches button text */
+  font-family: 'Times New Roman', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+ }
+ tr{
+  width: 100%;
+  background-color: #121212; /* Same as container */
+  font-family: 'Times New Roman', serif;
+  color: #EAE0D5; /* Same as body text */
+ }
+ tr:nth-child(even){
+  background-color: #1A1A1A; /* Slightly lighter than container for contrast */
+ }
+
+.container {
+  width: 85%;
+  background: #121212; /* Deep charcoal for container */
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 15px rgba(234, 224, 213, 0.05); /* Subtle, refined shadow */
+  position: relative;
+  z-index: 2;
+}
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .content .left-side{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+.content .left-side::before{
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #daa520; /* Golden/Brownish-Beige separator */
+}
+.content .left-side .details{
+  margin: 14px;
+  text-align: center;
+}
+.content .left-side .details i{
+  font-size: 30px;
+  color: #daa520; /* Golden/Brownish-Beige for icons */
+  margin-bottom: 10px;
+}
+.content .left-side .details .topic{
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Times New Roman', serif; /* Script for elegance */
+  color: #EAE0D5;
+}
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+  font-size: 14px;
+  color: #A9A7A0; /* Muted beige-gray for less important text */
+}
+
+.container .content .right-side{
+  width: 75%;
+  margin-left: 75px;
+}
+.content .right-side .topic-text{
+  font-size: 28px;
+  font-weight: 600;
+  color: #daa520; /* Gold accent */
+  font-family: 'Times New Roman', serif; /* Script for main heading */
+  margin-bottom: 15px;
+}
+.content .right-side p {
+  color: #A9A7A0;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.right-side .input-box{
+  height: 50px;
+  width: 100%;
+  margin: 12px 0;
+}
+.right-side .input-box input,
+.right-side .input-box textarea{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  background: #0A0908; /* Black input backgrounds */
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+  color: #EAE0D5; /* Light text in inputs */
+  border: 1px solid #2A2A2A; /* Subtle border */
+  transition: all 0.3s ease;
+}
+.right-side .input-box input::placeholder,
+.right-side .input-box textarea::placeholder {
+  color: #5E503F; /* Muted placeholder text */
+}
+.right-side .message-box {
+  min-height: 110px;
+}
+.right-side .input-box textarea {
+  padding-top: 6px;
+  height: 120px;
+  padding: 15px;
+}
+.right-side .button{
+  display: inline-block;
+  margin-top: 12px;
+}
+.right-side .button input[type="button"]{
+  color: #0A0908; /* Black text on button */
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px; /* Sharp, luxury-style edges */
+  background: #daa520; /* Golden/Brownish-Beige button */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+.button input[type="button"]:hover{
+  background: #D4B895; /* Lighter gold on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+@media (max-width: 950px) {
+  .container{
+    width: 90%;
+    padding: 30px 40px 40px 35px ;
+  }
+  .container .content .right-side{
+   width: 75%;
+   margin-left: 55px;
+}
+}
+@media (max-width: 820px) {
+  .container{
+    margin: 40px 0;
+    height: 100%;
+  }
+  .container .content{
+    flex-direction: column-reverse;
+  }
+ .container .content .left-side{
+   width: 100%;
+   flex-direction: row;
+   margin-top: 40px;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+ .container .content .left-side::before{
+   display: none;
+ }
+ .container .content .right-side{
+   width: 100%;
+   margin-left: 0;
+ }
+}

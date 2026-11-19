@@ -1,0 +1,88 @@
+/* style.css - External Stylesheet */
+
+/* Text & Font Properties: 1, 2, 3, 4, 5 */
+
+
+body {
+    color: #daa520; /* 2 */
+    font-size: 1.2em; /* 3 */
+    line-height: 1.6;
+}
+
+
+
+h1, h2 {
+    text-transform: uppercase; /* 4 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 5 */
+    font-weight: normal;
+    font-size: 2em;
+    color: #000;
+}
+
+/* Dimension Properties: 1, 2, 3, 4, 5 & Positioning Properties: 1, 2, 4, 5 */
+.main-content {
+    width: 80%; /* 1 */
+    max-width: 1200px; /* 2 */
+    height: auto; /* 3 */
+    min-height: 500px; /* 4 */
+    margin: 0 auto; /* Positioning Property 1: Center */
+    padding: 30px 50px; /* 5 */
+    position: relative; /* Positioning Property 2 */
+}
+
+/* Background Properties: 1, 2, 3, 4 */
+body {
+    background-color: #f7f7f7; /* 1 */
+    /* background-image: url('pattern.png'); 2 (Hypothetical) */
+    background-repeat: repeat-x; /* 3 */
+    background-attachment: fixed; /* 4 */
+}
+
+/* Navigation Styling (used by navigation.html) */
+#nav-bar {
+    background-color: #000; /* Background Property 5 */
+    background-image: linear-gradient(to right, #0d0d0d, #333);
+    padding: 15px 0;
+    text-align: center;
+    /* Positioning Property 5: z-index (Conceptual, if nav was fixed) */
+}
+
+.nav-link {
+    
+    color: #b8860b; /* Gold accent */
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Positioning Property 3: Used for layout in collections.html */
+.product-card {
+    width: 30%;
+    float: left; /* Positioning Property 3 */
+    margin: 1.66%;
+    box-sizing: border-box;
+}
+
+/* Positioning Property 4 */
+.clear {
+    clear: both; /* Positioning Property 4 */
+}

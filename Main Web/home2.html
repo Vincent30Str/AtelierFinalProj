@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to Atelier</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000;
+        }
+        .hero-section {
+            
+            background-color: #000000; 
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            
+            width: 100%; 
+           
+            font-family: 'Times New Roman', serif; 
+        }
+        .hero-section h1 {
+            color: #b8860b; /* Gold accent */
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            border: 1px solid #b8860b;
+            color: #b8860b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #b8860b;
+            color: #000;
+        }
+
+        .subscribe-form h2 {
+            color: antiquewhite;
+        }
+       
+        .subscribe-form {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 40px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .subscribe-form input[type="email"],
+        .subscribe-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .subscribe-form button {
+            background-color: #000;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+        .subscribe-form button:hover {
+            background-color: #b8860b;
+        }
+
+
+        
+        .site-footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 40px 0;
+           
+            font-size: 0.9em; 
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .footer-column {
+            width: 20%;
+        }
+
+        .site-footer h3 {
+            color: #b8860b;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .site-footer ul, .site-footer ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .site-footer li {
+            margin-bottom: 8px;
+        }
+        .site-footer a {
+            color: #ccc;
+        }
+        .site-footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="hero-section">
+            <h1>The New Standard of Elegance</h1>
+            <p style="font-size: 1.2em;">Discover the **Autumn Solstice** Collection.</p>
+            <a href="products.html" target="main_content" class="cta-button">View Collection</a>
+        </div>
+        
+        <h2 style="margin-top: 60px;">Crafted for the Discerning Eye</h2>
+        <p>Atelier embodies timeless sophistication. Every garment and accessory is meticulously crafted by master artisans in our European ateliers, upholding a tradition of quality and design excellence that defies fleeting trends.</p>
+
+        <div style="margin-top: 40px;">
+            <div class="product-card" style="width: 45%; margin-left: 2%;">
+                <h3>Haute Couture</h3>
+                <p>Bespoke pieces designed for momentous occasions. Book a private consultation.</p>
+            </div>
+            <div class="product-card" style="width: 45%;">
+                <h3>Ready-to-Wear</h3>
+                <p>Elevated essentials for the modern wardrobe, delivered globally.</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <!-- NEW: Subscription Form with Text Area -->
+        <div class="subscribe-form">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter and tell us what you're looking for.</p>
+            <form action="/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                
+                <!-- NEW TEXT AREA ADDED -->
+                <textarea name="interest" rows="4" placeholder="Optional: Tell us about your primary interests (e.g., specific collections, haute couture, accessories, etc.)"></textarea>
+                
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <!-- END Subscription Form -->
+    </div>
+
+    <!-- START Footer Content -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <!-- REQUIREMENT: Unordered List 1 -->
+                <ul>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Sizing Guide</a></li>
+                    <li><a href="#">FAQ & Help Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Atelier</h3>
+                <!-- REQUIREMENT: Ordered List 1 -->
+                <ol>
+                    <li><a href="products.html" target="main_content">Explore Collections</a></li>
+                    <li><a href="register.html" target="main_content">Book Consultation</a></li>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="contact.html" target="main_content">Visit a Boutique</a></li>
+                </ol>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal & Privacy</h3>
+                <!-- REQUIREMENT: Unordered List 2 -->
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Career Opportunities</h3>
+                <!-- REQUIREMENT: Ordered List 2 -->
+                <ol>
+                    <li>View Openings in Paris</li>
+                    <li>Apply for NYC Atelier</li>
+                    <li>Submit General Inquiry</li>
+                </ol>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
+            <p>&copy; 2025 Atelier. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- END Footer Content -->
+
+</body>
+</html>

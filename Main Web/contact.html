@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Atelier | Contact</title>
+  <!-- External CSS Method -->
+  <link rel="stylesheet" href="contact.css">
+  <!-- Internal CSS Method Starts -->
+  <style>
+    /* Internal CSS for unique page animations and enhancements */
+    .container {
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content .left-side .details {
+      transition: all 0.3s ease;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    .content .left-side .details:hover {
+      transform: translateY(-5px);
+      background: rgba(198, 172, 143, 0.05);
+    }
+
+    /* Refined focus effects for form inputs */
+    .right-side .input-box input:focus,
+    .right-side .input-box textarea:focus {
+      border-color: #C6AC8F;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(198, 172, 143, 0.1);
+    }
+  </style>
+  <!-- Internal CSS Method Ends -->
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">Movieland Street, New Beverly Hills</div>
+          <div class="text-two">Cikarang, Bekasi, West Java</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+62 852 5508 0366</div>
+          
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">lomichelle@gmail.com</div>
+        
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any problems or suggestions related to the products, etc. Don't hesitate to contact us. It's our pleasure to help you :)</p>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Enter your name">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Enter your email">
+        </div>
+        <div class="input-box message-box">
+          <textarea placeholder="Enter your message"></textarea>
+        </div>
+        <div class="button">
+          <input type="button" value="Send Now">
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+  <!-- Inline CSS Method: Used for one-off decorative overlay -->
+  <div class="filter" style="
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 9, 8, 0.97) 0%, rgba(42, 38, 33, 0.95) 100%);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    pointer-events: none;">
+  </div>
+
+  <!-- Table now uses unified external CSS styling -->
+  <table>
+      <tr>
+          <th>#</th>
+          <th>Contact this number if you are from this country:</th>
+          <th>Number</th>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>German</td>
+          <td>+49 (0)2284333112</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Italy</td>
+          <td>+39 0230453420</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Australia</td>
+          <td>+61 0419558256</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>South Korea</td>
+          <td>1588-0001</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Japan</td>
+          <td>0570-046-666</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>America</td>
+          <td>1-480-418-5011</td>
+      </tr>
+  </table>
+</body>
