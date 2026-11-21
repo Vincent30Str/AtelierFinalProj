@@ -1,41 +1,11 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier | Luxury</title>
-    <link rel="stylesheet" href="/Main Web/styles/index.css">
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0;url=/">
+  <title>Atelier</title>
 </head>
 <body>
-    <header class="site-header">
-        <nav id="nav-bar" class="nav-bar" aria-label="Main navigation">
-            <a class="brand-logo nav-link" href="home2.html" target="main_content" aria-label="Atelier home">Atelier</a>
-            <a href="/Main Web/html/home.html" target="main_content" class="nav-link">HOME</a>
-            <a href="/Main Web/html/products.html" target="main_content" class="nav-link">COLLECTIONS</a>
-            <a href="/Main Web/html/about.html" target="main_content" class="nav-link">ABOUT</a>
-            <a href="/Main Web/html/contact.html" target="main_content" class="nav-link">CONTACT</a>
-            <a href="/Main Web/html/cart.html" target="main_content" class="nav-link" id="cart-link">
-                CART <span id="cart-count" aria-label="Cart item count">0</span>
-            </a>
-            <a href="/Main Web/html/login.html" target="main_content" class="nav-link">LOGIN</a>
-        </nav>
-    </header>
-    <main class="main-frame">
-        <iframe name="main_content" title="Atelier content" src="/Main Web/html/home2.html"></iframe>
-    </main>
-    <script>
-        function updateCartCount() {
-            try {
-                const cart = JSON.parse(localStorage.getItem("cart")) || [];
-                document.getElementById("cart-count").textContent = cart.length;
-            } catch (error) {
-                document.getElementById("cart-count").textContent = "0";
-            }
-        }
-
-        window.addEventListener("storage", updateCartCount);
-        window.addEventListener("focus", updateCartCount);
-        updateCartCount();
-    </script>
+  <p>The Atelier storefront has moved to the <a href="/">PHP storefront</a>.</p>
 </body>
 </html>
