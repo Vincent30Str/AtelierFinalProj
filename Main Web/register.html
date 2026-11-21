@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -6,161 +6,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
-  <style>
-  body {
-  margin: 0;
-  font-family: 'Times New Roman', serif; 
-  background-image: url("golqi.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-container {
-  width: 90%;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.85);
-  border-radius: 12px;
-  color: #daa520;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 1s ease-in-out;
-}
-
-.login-container h1 {
-  text-align: center;
-  color: #daa520;
-  margin-bottom: 25px;
-  letter-spacing: 2px;
-}
-
-.login-container label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  width: 95%;
-  padding: 12px;
-  margin-bottom: 18px;
-  border: none;
-  border-radius: 6px;
-  background: #dbba78;
-  color: #000;
-  font-size: 15px;
-  transition: all 0.3s ease;
-}
-
-.login-container input[type="text"]:focus,
-.login-container input[type="password"]:focus {
-  outline: none;
-  background: #f2d8a8;
-  box-shadow: 0 0 8px #daa520;
-}
-
-.login-container a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.login-container a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  background: #daa520;
-  transition: width 0.3s;
-  bottom: -3px;
-  left: 0;
-}
-
-.login-container a:hover {
-  color: #daa520;
-}
-
-.login-container a:hover::after {
-  width: 100%;
-}
-
-.login-container button {
-  width: 100%;
-  padding: 12px;
-  background: #dbba78;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.login-container button:hover {
-  background: #f2d8a8;
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.google-btn {
-  background: #db4a39;
-  color: #fff;
-}
-
-.google-btn:hover {
-  background: #e85b4a;
-}
-
-p {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-    
-  </style>
+  <link rel="stylesheet" href="register.css">
 </head>
 <body>
   <div class="login-container">
     <h1><u>ATELIER</u></h1>
-    <form>
+    <form id="registerForm">
       <label>Email *</label>
-      <input type="text" placeholder="enter your Email" class="login-bar">
+      <input type="email" name="email" placeholder="enter your Email" class="login-bar" required>
 
       <label>Password *</label>
-      <input type="password" placeholder="Enter your password" class="login-bar">
+      <input type="password" id="password" placeholder="Enter your password" class="login-bar" minlength="8" required>
 
        <label>Password confirm*</label>
-      <input type="password" placeholder="Enter your password again" class="login-bar">
+      <input type="password" id="passwordConfirm" placeholder="Enter your password again" class="login-bar" minlength="8" required>
 
 
       <!-- Gender Selection -->
 <label>Gender *</label>
-<div style="margin-bottom: 18px;">
-  <input type="radio" id="male" name="gender" value="male">
-  <label for="male" style="display:inline; font-weight:normal;">Male</label>
+<div class="gender-options">
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="male">Male</label>
   
-  <input type="radio" id="female" name="gender" value="female" style="margin-left:20px;">
-  <label for="female" style="display:inline; font-weight:normal;">Female</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
 </div>
 
 <!-- Country Selection -->
 <label for="country">Which country are you from? *</label>
-<select id="country" name="country" style="width:100%; padding:12px; margin-bottom:18px; border-radius:6px; border:none; background:#dbba78; font-size:15px; color:#000;">
+<select id="country" name="country" required>
   <option value="">-- Select your country --</option>
   <option value="indonesia">Indonesia</option>
   <option value="usa">United States</option>
@@ -172,11 +46,26 @@ p {
 </select>
 
 
-      <p style="font-size:14px;">Have an Account? <a href="login.html">Login</a></p>
+      <p class="account-link">Have an Account? <a href="login.html">Login</a></p>
 
       <button type="submit">Register</button>
-      <button type="button" class="google-btn">Or Register using Google</button>
+      <button type="button" class="google-btn" onclick="alert('Google registration is unavailable in this static demo.')">Or Register using Google</button>
     </form>
   </div>
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const password = document.getElementById("password");
+      const confirmation = document.getElementById("passwordConfirm");
+      if (password.value !== confirmation.value) {
+        confirmation.setCustomValidity("Passwords do not match.");
+        confirmation.reportValidity();
+        return;
+      }
+      confirmation.setCustomValidity("");
+      window.location.href = "login.html";
+    });
+  </script>
 </body>
 </html>
+

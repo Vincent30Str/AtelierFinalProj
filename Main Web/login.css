@@ -1,0 +1,81 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: #111 url("images/golqi.jpg") center / cover fixed no-repeat;
+    font-family: 'Times New Roman', serif;
+    display: grid;
+    place-items: center;
+}
+
+.login-container {
+    width: min(400px, calc(100% - 32px));
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.86);
+    border-radius: 12px;
+    color: #daa520;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 6px;
+    background: #dbba78;
+    color: #000;
+    font: 16px 'Times New Roman', serif;
+}
+
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.extra-options label {
+    margin: 0;
+}
+
+.login-container a {
+    color: #ccc;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 6px;
+    background: #dbba78;
+    cursor: pointer;
+    font: bold 16px 'Times New Roman', serif;
+}
+
+.google-btn {
+    background: #db4a39 !important;
+    color: #fff;
+}
+
+.login-container p {
+    text-align: center;
+}
+
+.account-link {
+    font-size: 14px;
+}

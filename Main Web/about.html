@@ -1,141 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <title>Atelier | About Us</title>
-    <link rel="stylesheet" href="contact.css">
-    <style>
-        /* Internal CSS for About Page */
-        .about-hero {
-            background: linear-gradient(rgba(10, 9, 8, 0.7), rgba(10, 9, 8, 0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #EAE0D5;
-        }
-
-        .hero-content h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 4rem;
-            color: #daa520;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .story-section {
-            padding: 5rem 2rem;
-            background: #121212;
-        }
-
-        .story-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .story-text h2 {
-            font-family: 'Alex Brush', cursive;
-            font-size: 2.5rem;
-            color: #daa520;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-text p {
-            color: #A9A7A0;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .values-section {
-            padding: 4rem 2rem;
-            background: #0A0908;
-            text-align: center;
-        }
-
-        .values-section h2 {
-            font-family: 'Alex Brush', cursive;
-            font-size: 2.5rem;
-            color: #daa520;
-            margin-bottom: 3rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .value-card {
-            background: #121212;
-            padding: 2rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .value-card i {
-            font-size: 2.5rem;
-            color: #daa520;
-            margin-bottom: 1rem;
-        }
-
-        .value-card h3 {
-            color: #EAE0D5;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .value-card p {
-            color: #A9A7A0;
-            line-height: 1.6;
-        }
-
-        /* Inline CSS will be added directly in HTML */
-        .founder-quote {
-            background: #121212;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-left: 4px solid #daa520;
-        }
-
-        @media (max-width: 768px) {
-            .story-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
     <div class="about-hero">
@@ -148,13 +16,13 @@
     <section class="story-section">
         <div class="story-container">
             <div class="story-text">
-                <h2>Where It All Began</h2>
+                <h2>Where It All Began (this is another test of commit)</h2>
                 <p>Founded in the heart of Paris, Atelier emerged from a simple yet profound vision: to redefine luxury for the modern era while honoring traditional craftsmanship. Our journey began in a small workshop where every stitch told a story of passion and precision.</p>
                 <p>Today, we stand as a global symbol of sophistication, collaborating with the world's most renowned luxury houses including Chanel, Dior, Hermès, and Louis Vuitton to bring exceptional accessories to discerning clients worldwide.</p>
                 <p>Our commitment extends beyond creating beautiful pieces; we cultivate relationships built on trust, excellence, and shared appreciation for the extraordinary.</p>
             </div>
             <div class="story-image">
-                <img src="logo1.jpg" alt="Atelier Workshop" style="border: 1px solid #2A2A2A;">
+                <img src="images/logo1.jpg" alt="Atelier gold logo">
             </div>
         </div>
     </section>
@@ -180,9 +48,9 @@
         </div>
     </section>
 
-    <div class="founder-quote" style="margin: 4rem auto; max-width: 800px; font-style: italic; color: #A9A7A0; line-height: 1.6;">
-        <p style="font-size: 1.3rem; margin-bottom: 1rem;">"True luxury is not just about possession, but about the story each piece carries and the legacy it builds. At Atelier, we don't just create accessories; we curate heirlooms."</p>
-        <p style="color: #daa520; font-weight: bold;">- A, Founder</p>
+    <div class="founder-quote">
+        <p class="quote-text">"True luxury is not just about possession, but about the story each piece carries and the legacy it builds. At Atelier, we don't just create accessories; we curate heirlooms."</p>
+        <p class="quote-author">- A, Founder</p>
     </div>
 </body>
 </html>

@@ -1,13 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Atelier | Luxury </title>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier | Luxury</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<frameset rows="10%, 90%" frameborder="no" border="0" framespacing="0">
-    <frame name="top_nav" src="navigation.html" scrolling="no" noresize>
-    <frame name="main_content" src="home2.html" noresize>
-</frameset>
+<body>
+    <header class="site-header">
+        <nav id="nav-bar" class="nav-bar" aria-label="Main navigation">
+            <a class="brand-logo nav-link" href="home2.html" target="main_content" aria-label="Atelier home">Atelier</a>
+            <a href="home.html" target="main_content" class="nav-link">HOME</a>
+            <a href="products.html" target="main_content" class="nav-link">COLLECTIONS</a>
+            <a href="about.html" target="main_content" class="nav-link">ABOUT</a>
+            <a href="contact.html" target="main_content" class="nav-link">CONTACT</a>
+            <a href="cart.html" target="main_content" class="nav-link" id="cart-link">
+                CART <span id="cart-count" aria-label="Cart item count">0</span>
+            </a>
+            <a href="login.html" target="main_content" class="nav-link">LOGIN</a>
+        </nav>
+    </header>
+    <main class="main-frame">
+        <iframe name="main_content" title="Atelier content" src="home2.html"></iframe>
+    </main>
+    <script>
+        function updateCartCount() {
+            try {
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                document.getElementById("cart-count").textContent = cart.length;
+            } catch (error) {
+                document.getElementById("cart-count").textContent = "0";
+            }
+        }
 
-
+        window.addEventListener("storage", updateCartCount);
+        window.addEventListener("focus", updateCartCount);
+        updateCartCount();
+    </script>
+</body>
 </html>

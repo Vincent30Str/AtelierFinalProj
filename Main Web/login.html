@@ -1,147 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page - Atelier</title>
-  <style>
-    body {
-      margin: 0;
-      background-image: url("golqi.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      font-family: 'Times New Roman', serif;
-    }
-
-    .login-container {
-      width: 400px;
-      margin: 80px auto;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 12px;
-      color: #daa520;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .login-container h1 {
-      text-align: center;
-      color: #daa520;
-      margin-bottom: 30px;
-      letter-spacing: 2px;
-    }
-
-    .login-container label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    .login-container input[type="text"],
-    .login-container input[type="password"],
-    .login-container select {
-      width: 95%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 6px;
-      background: #dbba78;
-      color: #000;
-      font-family: 'Times New Roman', serif;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-
-    .login-container input[type="text"]:focus,
-    .login-container input[type="password"]:focus,
-    .login-container select:focus {
-      background: #f2d8a8;
-      outline: none;
-      box-shadow: 0 0 8px #daa520;
-    }
-
-    .login-container input[type="checkbox"] {
-      margin-right: 8px;
-    }
-
-    .login-container a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 14px;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .login-container a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      display: block;
-      background: #daa520;
-      transition: width 0.3s;
-      bottom: -3px;
-      left: 0;
-    }
-
-    .login-container a:hover {
-      color: #daa520;
-    }
-
-    .login-container a:hover::after {
-      width: 100%;
-    }
-
-    .login-container button {
-      width: 100%;
-      padding: 12px;
-      background: #dbba78;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 15px;
-      font-size: 16px;
-      font-family: 'Times New Roman', serif;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .login-container button:hover {
-      background: #f2d8a8;
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .extra-options {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .google-btn {
-      background: #db4a39 !important;
-      color: #fff !important;
-    }
-
-    .google-btn:hover {
-      background: #e85b4a !important;
-    }
-
-    p {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    /* Fade in animation */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
   <div class="login-container">
@@ -153,22 +16,15 @@
       <label>Password *</label>
       <input type="password" id="loginPassword" placeholder="Enter your password" class="login-bar" required>
 
-      <!-- Tambahan Pilihan Role Login -->
-      <label>Login As *</label>
-      <select id="userRole" required>
-        <option value="buyer">Buyer (Customer)</option>
-        <option value="seller">Seller (Admin)</option>
-      </select>
-
       <div class="extra-options">
-        <a href="#">forgot password?</a>
-        <label><input type="checkbox"> Remember me</label>
+        <a href="register.html">Forgot password? Register account</a>
+        <label><input type="checkbox" id="rememberMe"> Remember me</label>
       </div>
 
-      <p style="font-size:14px;">Not yet have an Account? <a href="register.html">Register</a></p>
+      <p class="account-link">Not yet have an Account? <a href="register.html">Register</a></p>
 
       <button type="submit">Login</button>
-      <button type="button" class="google-btn">Or Login using Google</button>
+      <button type="button" class="google-btn" onclick="alert('Google login is unavailable in this static demo.')">Or Login using Google</button>
     </form>
   </div>
 
@@ -176,20 +32,10 @@
     function handleLogin(event) {
         event.preventDefault();
         
-        const role = document.getElementById("userRole").value;
         const email = document.getElementById("loginEmail").value;
-
-        // Simpan role pengguna ke localStorage
-        localStorage.setItem("atelier_user_role", role);
-        localStorage.setItem("atelier_user_email", email);
-
-        if (role === "buyer") {
-            alert("Login successful as Buyer!");
-            window.location.href = "products.html"; // Masuk ke halaman katalog produk buyer
-        } else if (role === "seller") {
-            alert("Login successful as Seller!");
-            window.location.href = "seller.html"; // Masuk ke dashboard seller
-        }
+        const rememberMe = document.getElementById("rememberMe").checked;
+        localStorage.setItem("atelier_user_email", rememberMe ? email : "");
+        window.location.href = "products.html";
     }
   </script>
 </body>

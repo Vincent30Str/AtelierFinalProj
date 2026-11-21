@@ -38,7 +38,7 @@ body {
     background-attachment: fixed; /* 4 */
 }
 
-/* Navigation Styling (used by navigation.html) */
+/* Legacy navigation classes retained for page compatibility */
 #nav-bar {
     background-color: #000; /* Background Property 5 */
     background-image: linear-gradient(to right, #0d0d0d, #333);

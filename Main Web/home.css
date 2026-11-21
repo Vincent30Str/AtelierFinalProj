@@ -1,20 +1,21 @@
 * {
     font-family: 'Times New Roman', serif;
     margin: 0;
-    padding: o;
-    background-color: rgba(10, 9, 8, 0.7);
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
+    background: rgba(10, 9, 8, 0.92);
 }
 
 main {
     height: 100%;
     width: 100%;
-    position:relative
+    position: relative;
 }
 
 main .louis-bag img {
@@ -126,19 +127,19 @@ main .images-container {
 
 @keyframes slider {
     0% {
-        background-image: url('Black Gold Louis Vuitton inspired icon iOS14 homescreen lock scren inspiration ideas designer LV.jpg');
+        background-image: url('images/Black Gold Louis Vuitton inspired icon iOS14 homescreen lock scren inspiration ideas designer LV.jpg');
     }
     50% {
-        background-image: url('Unknown-7.jpg');
-    }
-    50% {
-        background-image: url('dior8.jpg');
+        background-image: url('images/Unknown-7.jpg');
     }
     75% {
-        background-image: url('Logo.jpg');
+        background-image: url('images/dior8.jpg');
+    }
+    90% {
+        background-image: url('images/Logo.jpg');
     }
     100% {
-        background-image: url('logo1.jpg');
+        background-image: url('images/logo1.jpg');
     }
    
     
