@@ -1,48 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <title>Atelier | Contact</title>
   <!-- External CSS Method -->
   <link rel="stylesheet" href="contact.css">
-  <!-- Internal CSS Method Starts -->
-  <style>
-    /* Internal CSS for unique page animations and enhancements */
-    .container {
-      animation: fadeInUp 1.2s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .content .left-side .details {
-      transition: all 0.3s ease;
-      padding: 15px;
-      border-radius: 4px;
-    }
-
-    .content .left-side .details:hover {
-      transform: translateY(-5px);
-      background: rgba(198, 172, 143, 0.05);
-    }
-
-    /* Refined focus effects for form inputs */
-    .right-side .input-box input:focus,
-    .right-side .input-box textarea:focus {
-      border-color: #C6AC8F;
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(198, 172, 143, 0.1);
-    }
-  </style>
-  <!-- Internal CSS Method Ends -->
 </head>
 <body>
   <div class="container">
@@ -70,35 +32,27 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <p>If you have any problems or suggestions related to the products, etc. Don't hesitate to contact us. It's our pleasure to help you :)</p>
-      <form action="#">
+      <form id="contact-form">
         <div class="input-box">
-          <input type="text" placeholder="Enter your name">
+          <input type="text" name="name" placeholder="Enter your name" aria-label="Name" required>
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Enter your email">
+          <input type="email" name="email" placeholder="Enter your email" aria-label="Email" required>
         </div>
         <div class="input-box message-box">
-          <textarea placeholder="Enter your message"></textarea>
+          <textarea name="message" placeholder="Enter your message" aria-label="Message" required></textarea>
         </div>
         <div class="button">
-          <input type="button" value="Send Now">
+          <input type="submit" value="Send Now">
         </div>
       </form>
+      <p id="contact-status" class="contact-status" role="status"></p>
     </div>
     </div>
   </div>
 
   <!-- Inline CSS Method: Used for one-off decorative overlay -->
-  <div class="filter" style="
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(10, 9, 8, 0.97) 0%, rgba(42, 38, 33, 0.95) 100%);
-    z-index: -1;
-    top: 0;
-    left: 0;
-    pointer-events: none;">
-  </div>
+  <div class="filter" aria-hidden="true"></div>
 
   <!-- Table now uses unified external CSS styling -->
   <table>
@@ -138,4 +92,11 @@
           <td>1-480-418-5011</td>
       </tr>
   </table>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.getElementById("contact-status").textContent = "Thank you. Your message is ready for the Atelier team.";
+      event.target.reset();
+    });
+  </script>
 </body>
